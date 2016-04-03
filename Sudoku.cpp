@@ -40,9 +40,10 @@ int Sudoku::getFirstZeroIndex()
 
 bool Sudoku::checkUnity(int arr[])
 {
-	int arr_unity[9]={0};
+	int arr_unity[9];
 	int i;
-
+ 	for(int i=0;i<9;++i)
+        	arr_unity[i]=0;
 	for(i=0;i<9;++i)
 		++arr_unity[arr[i]-1];
 	for(i=0;i<9;++i)
