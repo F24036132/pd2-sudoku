@@ -40,12 +40,10 @@ int Sudoku::getFirstZeroIndex()
 
 bool Sudoku::checkUnity(int arr[])
 {
-	int arr_unity[9];
+	int arr_unity[9]={0};
 	int i;
 
 	for(i=0;i<9;++i)
-		arr_unity[i]=0;
-	for(i=0; i<9;++i)
 		++arr_unity[arr[i]-1];
 	for(i=0;i<9;++i)
 		if(arr_unity[i]>1)
@@ -99,14 +97,13 @@ void Sudoku::printOut(bool n)
 
 void Sudoku::possibleElement()
 {
-	int record[sudokuSize];
+	int record[sudokuSize]={0};
 	int location,location2,r=1;
 	int i,j,k;
 
 	while(r){
 		r=0;
 		for(i=0;i<sudokuSize;++i){
-			record[i]=0;
 			for(j=0;j<9;j++)
 				element[i][j]=1;
 		}
@@ -117,7 +114,6 @@ void Sudoku::possibleElement()
 						element[i+j][map[i+k]-1]=0;
 			}
 		}
-
 		for(i=0;i<9;++i){ // check columns
 			for(j=0;j<9;++j){
 				for(k=0;k<9;++k)
@@ -153,10 +149,6 @@ void Sudoku::possibleElement()
 				}
 			}
 		}
-	}
-	for(i=0;i<sudokuSize;++i){
-		for(j=0;j<sudokuNum;++j)
-			tmpPossible[i][j]=element[i][j];
 	}
 }
 
