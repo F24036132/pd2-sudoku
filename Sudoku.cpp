@@ -385,7 +385,7 @@ void Sudoku::flip(int n)
 	}
 }
 
-void Sudoku::change()
+void Sudoku::transform()
 {
 	srand(time(NULL));
 	changeNum(rand()%9+1,rand()%9+1);
@@ -393,10 +393,5 @@ void Sudoku::change()
 	changeCol(rand()%3,rand()%3);
 	rotate(rand()%101);
 	flip(rand()%2);
-}
-
-void Sudoku::transform()
-{
-	change();
 	printOut(true);
 }
