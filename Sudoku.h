@@ -12,7 +12,6 @@ public:
 	void setElement(int index,int value);
 	int getFirstZeroIndex();
 	bool isCorrect();
-	void printOut();
 	void printOut(bool n);
 	static const int sudokuSize=81;
 	static const int sudokuNum=9;
