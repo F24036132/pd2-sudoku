@@ -4,7 +4,6 @@
 #include <cstdio>
 
 class Sudoku {
-
 public:
 	Sudoku();
 	Sudoku(const int init_map[]);
@@ -13,7 +12,7 @@ public:
 	void setElement(int index,int value);
 	int getFirstZeroIndex();
 	bool isCorrect();
-	void printOut(bool n);
+	void printOut();
 	static const int sudokuSize=81;
 	static const int sudokuNum=9;
 	
