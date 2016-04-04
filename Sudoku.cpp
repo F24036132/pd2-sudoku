@@ -281,7 +281,7 @@ void Sudoku::solve()
 			cout<<1<<endl;
 			printOut();
 		}
-		if(!solution()) cout<<0<<endl;
+		else if(!solution()) cout<<0<<endl;
 		else if(num>1) cout<<2<<endl;
 		else if(num==1){
 			cout<<1<<endl;
