@@ -13,7 +13,6 @@ public:
 	int getFirstZeroIndex();
 	bool isCorrect();
 	void printOut(bool n);
-	void change();
 	static const int sudokuSize=81;
 	static const int sudokuNum=9;
 	
