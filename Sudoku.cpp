@@ -88,10 +88,16 @@ bool Sudoku::isCorrect()
 	return true;
 }
 
-void Sudoku::printOut()
+void Sudoku::printOut(bool n)
 {
-	for(int i=0;i<sudokuSize;++i)
-		printf("%d%c",map[i],i%9==8?'\n':' ');
+	if(!n){
+		for(int i=0;i<sudokuSize;++i)
+			printf("%d%c",answer[i],i%9==8?'\n':' ');
+	}
+	else{
+		for(int i=0;i<sudokuSize;++i)
+			printf("%d%c",map[i],i%9==8?'\n':' ');
+	}
 }
 
 void Sudoku::possibleElement()
@@ -157,7 +163,7 @@ bool Sudoku::solution()
 	int tmp[sudokuSize];
 	int i=0,j;
 
-	for(j=0;j<81;++j)
+/*	for(j=0;j<81;++j)
 		answer[j]=map[j];
 	do{
 		if(i>=9&&first==0) return false;
@@ -213,8 +219,8 @@ bool Sudoku::solution()
 		}
 		i--;
 	}while(first>=0&&first<81);
-	return true;
-/*	if(first==-1){
+	return true;*/
+	if(first==-1){
 		if(isCorrect()){
 			num++;
 			for(i=0;i<81;++i)
@@ -242,7 +248,7 @@ bool Sudoku::solution()
 		}
 		if(num==1) return true;
 		else return false;
-	}*/
+	}
 }
 
 void Sudoku::giveQuestion()
@@ -260,7 +266,7 @@ void Sudoku::giveQuestion()
 		 9,0,0,3,0,0,6,0,0};
 	for(int i=0;i<sudokuSize;++i)
 		setMap(question);
-	transform();
+	transform(true);
 }
 
 void Sudoku::readIn()
@@ -279,13 +285,13 @@ void Sudoku::solve()
 		possibleElement();
 		if(getFirstZeroIndex()==-1){
 			cout<<1<<endl;
-			printOut();
+			printOut(true);
 		}
 		else if(!solution()) cout<<0<<endl;
 		else if(num>1) cout<<2<<endl;
 		else if(num==1){
 			cout<<1<<endl;
-			printOut();
+			printOut(false);
 		}
 	}
 }
@@ -387,5 +393,5 @@ void Sudoku::transform()
 	changeCol(rand()%3,rand()%3);
 	rotate(rand()%101);
 	flip(rand()%2);
-	printOut();
+	printOut(true);
 }
