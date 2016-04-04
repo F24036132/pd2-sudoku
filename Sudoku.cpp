@@ -283,11 +283,7 @@ void Sudoku::solve()
 	if(!isCorrect()) cout<<0<<endl;
 	else{
 		possibleElement();
-		if(getFirstZeroIndex()==-1){
-			cout<<1<<endl;
-			printOut(true);
-		}
-		else if(!solution()) cout<<0<<endl;
+		if(!solution()) cout<<0<<endl;
 		else if(num>1) cout<<2<<endl;
 		else if(num==1){
 			cout<<1<<endl;
