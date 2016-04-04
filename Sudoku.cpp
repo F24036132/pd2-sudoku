@@ -266,7 +266,7 @@ void Sudoku::giveQuestion()
 		 9,0,0,3,0,0,6,0,0};
 	for(int i=0;i<sudokuSize;++i)
 		setMap(question);
-	transform(true);
+	transform();
 }
 
 void Sudoku::readIn()
